@@ -1,0 +1,32 @@
+<package>
+  <name>ccny_rgbd</name>
+  <version>0.1.0</version>
+  <description>Ros applications for fast visual odometry and mapping from RGB-D data, built on top of the rgbdtools library.</description>
+  <author>Ivan Dryanovski</author>
+  <maintainer email="ivan.dryanovski@gmail.com">Ivan Dryanovski</maintainer>
+  <license>GPL</license>
+  <url>http://wiki.ros.org/ccny_rgbd</url>
+  <buildtool_depend>catkin</buildtool_depend>
+  <test_depend>rostest</test_depend>
+  <build_depend>dynamic_reconfigure</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>message_filters</build_depend>
+  <build_depend>nodelet</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>octomap</build_depend>
+  <run_depend>dynamic_reconfigure</run_depend>
+  <run_depend>image_geometry</run_depend>
+  <run_depend>image_proc</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>octomap</run_depend>
+  <run_depend>image_transport</run_depend>
+  <run_depend>libopencv-dev</run_depend>
+  <run_depend>cv_bridge</run_depend>
+  <run_depend>message_filters</run_depend>
+  <run_depend>nodelet</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+</package>
