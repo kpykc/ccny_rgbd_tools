@@ -132,6 +132,7 @@ void KeyframeMapper::initParams()
   if (!nh_private_.getParam ("graph/k_nearest_neighbors", graph_k_nearest_neighbors))
     graph_k_nearest_neighbors = 4;
   
+  graph_detector_.setFeaturesTypeForRANSAC("SURF");
   graph_detector_.setNKeypoints(graph_n_keypoints);
   graph_detector_.setNCandidates(graph_n_candidates);   
   graph_detector_.setKNearestNeighbors(graph_k_nearest_neighbors);    

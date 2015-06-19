@@ -36,6 +36,7 @@ generate_dynamic_reconfigure_options(
   ./cfg/OrbDetector.cfg
   ./cfg/RGBDImageProc.cfg
   ./cfg/StarDetector.cfg
+  ./cfg/SurfDetector.cfg
 )
 
 include_directories(
