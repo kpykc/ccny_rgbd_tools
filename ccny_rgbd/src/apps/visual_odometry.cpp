@@ -286,7 +286,7 @@ void VisualOdometry::RGBDCallback(
 {
   ros::WallTime start = ros::WallTime::now();
 
-  ROS_INFO("VO rgbd callback called" );
+  // ROS_INFO("VO rgbd callback called" );
 
   // **** initialize ***************************************************
 
