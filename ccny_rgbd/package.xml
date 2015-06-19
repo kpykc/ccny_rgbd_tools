@@ -6,6 +6,7 @@
   <maintainer email="ivan.dryanovski@gmail.com">Ivan Dryanovski</maintainer>
   <license>GPL</license>
   <url>http://wiki.ros.org/ccny_rgbd</url>
+
   <buildtool_depend>catkin</buildtool_depend>
   <test_depend>rostest</test_depend>
   <build_depend>dynamic_reconfigure</build_depend>
@@ -17,6 +18,9 @@
   <build_depend>cv_bridge</build_depend>
   <build_depend>tf</build_depend>
   <build_depend>octomap</build_depend>
+
+  <build_depend>librgbdtools</build_depend>
+
   <run_depend>dynamic_reconfigure</run_depend>
   <run_depend>image_geometry</run_depend>
   <run_depend>image_proc</run_depend>
@@ -29,4 +33,7 @@
   <run_depend>nodelet</run_depend>
   <run_depend>tf</run_depend>
   <run_depend>sensor_msgs</run_depend>
+
+  <run_depend>librgbdtools</run_depend>
+
 </package>

@@ -2,13 +2,15 @@ cmake_minimum_required(VERSION 2.4.6)
 project(ccny_rgbd)
 
 find_package(catkin REQUIRED dynamic_reconfigure roscpp 
+  nodelet 
   # octomap
   image_transport
   sensor_msgs
   cv_bridge
   message_generation
   tf
-  )
+)
+
 find_package(Boost REQUIRED COMPONENTS signals filesystem system regex )
 find_package(OpenCV REQUIRED)
 
@@ -23,7 +25,10 @@ add_service_files(
   SolveGraph.srv
 )
 
-generate_messages()
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 
 generate_dynamic_reconfigure_options(
   ./cfg/FeatureDetector.cfg
@@ -46,12 +51,15 @@ catkin_package(
   CATKIN_DEPENDS
   roscpp
   #  octomap
-  DEPENDS
+  librgbdtools
+  DEPENDS system_lib
 )
 
 ################################################################
 # Dependencies
 ################################################################
+
+link_directories(${catkin_LIBRARY_DIRS})
 
 # OpenCV
 include_directories(${OpenCV_INCLUDE_DIRS})

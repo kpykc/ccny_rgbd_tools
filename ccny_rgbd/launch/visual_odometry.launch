@@ -14,12 +14,14 @@
     <!-- NOTE: if using data from OpenNI driver directly, (without 
     ccny_rgbd/rgbd_image_proc"), then add the following remappings. 
     Also add these to keyframe_mapper in vo+mapping.launch.
-
     <remap from="/rgbd/depth" to="/camera/depth_registered/image_rect_raw"/>
+    -->
+    <remap from="/rgbd/depth" to="/camera/depth/image_rect_raw"/>
+    <!-- <remap from="/rgbd/depth" to="/camera/depth_registered/image_raw"/> -->
     <remap from="/rgbd/rgb"   to="/camera/rgb/image_rect_color"/>
     <remap from="/rgbd/info"  to="/camera/rgb/camera_info"/>
     
-    -->
+    <!-- -->
     
     #### diagnostics ##################################
         
@@ -36,7 +38,7 @@
     #  ORB, SURF, or GFT (Good features to track)
     <param name="feature/detector_type"               value="$(arg detector_type)"/> 
     <param name="feature/smooth"                      value="0"/>
-    <param name="feature/max_range"                   value="7.0"/>
+    <param name="feature/max_range"                   value="3.5"/> # default 7.0
     <param name="feature/max_stdev"                   value="0.05"/>
     <param name="feature/show_keypoints"              value="false"/>
     <param name="feature/publish_feature_cloud"       value="true"/>
@@ -65,6 +67,7 @@
 
     <param name="reg/ICPProbModel/max_iterations"            value="10"/>
     <param name="reg/ICPProbModel/max_model_size"            value="5000"/>
+    # default 5000
     <param name="reg/ICPProbModel/n_nearest_neighbors"       value="4"/>
     <param name="reg/ICPProbModel/max_assoc_dist_mah"        value="10.0"/>
     <param name="reg/ICPProbModel/max_corresp_dist_eucl"     value="0.15"/>
