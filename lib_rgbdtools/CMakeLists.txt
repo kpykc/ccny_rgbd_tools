@@ -31,13 +31,19 @@ set(rgbdtools_CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${rgbdtools_INSTALL_DIR})
 # message("rgbdtools_PREFIX='${rgbdtools_PREFIX}'")
 # message("rgbdtools_INSTALL_DIR='${rgbdtools_INSTALL_DIR}'")
 # message("rgbdtools_CMAKE_ARGS='${rgbdtools_CMAKE_ARGS}'")
+
+set(rgbdtools_REPO_URI https://github.com/kpykc/rgbdtools.git)
+set(rgbdtools_REPO_TAG master)
 find_package(Git)
 if(GIT_FOUND)
-  message("git found: ${GIT_EXECUTABLE}")
+  message(WARNING "Git found: " ${GIT_EXECUTABLE})
+  message(WARNING "Using *rgbdtools* repository with URI: " ${rgbdtools_REPO_URI} " TAG: " ${rgbdtools_REPO_TAG})
+
   include(ExternalProject)
   ExternalProject_Add(rgbdtools
-    GIT_REPOSITORY https://github.com/kpykc/rgbdtools.git
-    GIT_TAG c4248d4094ec013fb4130f9a7740420a37bf601d
+    GIT_REPOSITORY ${rgbdtools_REPO_URI}
+    GIT_TAG ${rgbdtools_REPO_TAG}
+    #c4248d4094ec013fb4130f9a7740420a37bf601d
     #PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/
     PREFIX ${CMAKE_BINARY_DIR}/librgbdtools
     # CONFIGURE_COMMAND echo "No configure"
@@ -48,7 +54,7 @@ if(GIT_FOUND)
     CMAKE_ARGS ${rgbdtools_CMAKE_ARGS}
   )
 else()
-  message("Git is not found, please try to set git executable path!")
+  message(FATAL_ERROR "Git is not found, please try to set git executable path!")
 endif()
 
 
