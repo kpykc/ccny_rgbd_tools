@@ -42,7 +42,7 @@ if(GIT_FOUND)
     PREFIX ${CMAKE_BINARY_DIR}/librgbdtools
     # CONFIGURE_COMMAND echo "No configure"
     # BUILD_COMMAND cmake
-    # INSTALL_COMMAND make install INSTALL_PREFIX=${CATKIN_DEVEL_PREFIX}/lib/ardrone
+    # INSTALL_COMMAND make install INSTALL_PREFIX=${CATKIN_DEVEL_PREFIX}/lib/rgbdtools
     # BUILD_IN_SOURCE 1
     INSTALL_DIR ${rgbdtools_INSTALL_DIR}
     CMAKE_ARGS ${rgbdtools_CMAKE_ARGS}
